@@ -6,8 +6,8 @@
 
     <packaging>war</packaging>
 
-    <groupId>mv</groupId>
-    <artifactId>mv</artifactId>
+    <groupId>mvg</groupId>
+    <artifactId>mva</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencyManagement>
@@ -85,6 +85,12 @@
             <artifactId>standard</artifactId>
             <version>1.1.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.jsimone</groupId>
+            <artifactId>webapp-runner</artifactId>
+            <version>7.0.34.0</version>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
 
@@ -106,15 +112,14 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.4</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
